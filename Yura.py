@@ -75,3 +75,43 @@ print('Alexander'[::-1])  # rednaxelA
 value = 'Hexlet'
 print(value[2:5])
 
+print(int('10'))
+print(float(10))
+print(str(10 > 5))
+
+print(len('Alex'))  # => 4
+
+print(pow(2, 3))  # => 8
+
+
+def argss(*args):
+    print(args)
+
+
+argss(1, 2, 3)
+
+print(type('haha'))
+
+company = "hexlet"
+print(company.capitalize())
+
+
+def myFunc(x):
+    return x
+
+
+def passFunc():
+    pass
+
+
+def hf(a, b=6):
+    return a + b
+
+
+print(hf(4))
+
+
+def truncate(string, remainedLength):
+    return string[:remainedLength] + '...'
+
+print(truncate('hahaha',2))
