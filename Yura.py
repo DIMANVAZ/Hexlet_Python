@@ -153,9 +153,11 @@ print(get_age_difference(2020, 1009))
 def has_upper_case(word):
     return word.lower() != word
 
+
 print(has_upper_case('Words'))
 print(has_upper_case('woed'))
 print(has_upper_case(''))
+
 
 def is_leap_year(year):
     if year % 400 == 0:
@@ -164,16 +166,19 @@ def is_leap_year(year):
         return True
     return False
 
+
 print(is_leap_year(2018))
 print(is_leap_year(2017))
 print(is_leap_year(2016))
 
-def string_or_not(any): # диспетчеризация
+
+def string_or_not(any):  # диспетчеризация
     keys = {
         'True': 'yes',
         'False': 'no',
     }
     return keys[str(isinstance(any, str))]
+
 
 print(string_or_not('goof'))
 print(string_or_not(9))
@@ -181,6 +186,7 @@ print(string_or_not(9))
 print('ALexander'.find('AL'))
 print('ALexander'.find('Ax'))
 print('ALexander'.find('and'))
+
 
 def normalize_url(url):
     if url.startswith('https://'):
@@ -190,9 +196,11 @@ def normalize_url(url):
     else:
         return 'https://' + url
 
+
 print(normalize_url('https://ya.ru'))  # 'https://ya.ru'
 print(normalize_url('google.com'))  # 'https://google.com'
 print(normalize_url('http://ai.fi'))  # 'https://ai.fi'
+
 
 def print_numbers(num):
     while num:
@@ -202,3 +210,76 @@ def print_numbers(num):
 
 
 print_numbers(4)
+
+
+def join_numbers_from_range(start, end):
+    sum = ''
+    while start <= end:
+        sum += str(start)
+        start += 1
+    print(sum)
+
+
+join_numbers_from_range(1, 6)
+join_numbers_from_range(1, 1)
+
+
+def my_substr(string, len):
+    fin = ''
+    for i in range(len):
+        fin += string[i]
+    return fin
+
+
+print(my_substr('hello', 2))
+
+
+def is_contains_char(word, char):
+    if word.lower().find(char.lower()) == -1:
+        return False
+    return True
+
+
+print(is_contains_char('hello', 'h'))
+print(is_contains_char('hello', 'w'))
+print(is_contains_char('hello', 'H'))
+
+
+def sum(numbers):
+    result = 0
+    for num in numbers:
+        result += int(num)
+    return result
+
+
+print(sum("12345"))  # 15
+
+
+def filter_string(text, symbol):
+    res_str = ''
+    for index in range(0, len(text)):
+        if text[index].lower() != symbol.lower():
+            res_str += text[index]
+    return res_str.strip()
+
+text = 'If I look forward I win'
+print(filter_string(text, 'i'))  # 'f  look forward  wn'
+print(filter_string(text, 'O'))  # 'If I lk frward I win
+
+text2 = 'I look back if you are lost'
+print(filter_string(text2, 'w')) # 'I look back if you are lost'
+print(filter_string(text2, 'I')) # 'look back f you are lost'
+
+def is_palindrome(text):
+    if len(text) < 2:
+        return True
+    if text[0] == text[len(text)-1]:
+        return is_palindrome(text[1:-1])
+    return False
+
+print ('is_palindrome')
+print(is_palindrome(''))  # True пустая строка тоже считается палиндромом
+print(is_palindrome('radar')) # True
+print(is_palindrome('a')) # True
+print(is_palindrome('abs')) # False
+print(is_palindrome('ишак ищет у тещи каши')) # True
