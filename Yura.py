@@ -283,3 +283,49 @@ print(is_palindrome('radar')) # True
 print(is_palindrome('a')) # True
 print(is_palindrome('abs')) # False
 print(is_palindrome('ишак ищет у тещи каши')) # True
+
+import main
+main.doAction()
+
+from main import doAction
+doAction()
+
+from symbols import is_vowel
+def count_vowels(string):
+    count = 0
+    for letter in string:
+        if is_vowel(letter):
+            count += 1
+    return count
+
+print(count_vowels('a'))
+print(count_vowels('abeu'))
+print(count_vowels('abc'))
+
+from for_import import *
+showTwo()
+
+import trainPack.constants
+import trainPack.functions
+
+trainPack.functions.func(trainPack.constants.WORD)
+print(trainPack.NAME)
+
+def choice_from_range(string, start=0, end=0):
+    import random
+    return string[random.randint(start, end)]
+
+print(choice_from_range('abcds',2,4))
+
+cortage = (1,2,3,4,5)
+
+(one,two,three,four,five) = cortage
+
+print(one)
+print(two)
+print(three)
+
+def sort_pair(pair):
+    if pair[0] > pair[1]:
+        return (pair[1], pair[0])
+    return (pair[0], pair[1])
