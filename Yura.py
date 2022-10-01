@@ -1,4 +1,5 @@
 import cmath
+import string
 
 name = "Ayrat"
 print("Hello {0}".format(name))
@@ -166,3 +167,38 @@ def is_leap_year(year):
 print(is_leap_year(2018))
 print(is_leap_year(2017))
 print(is_leap_year(2016))
+
+def string_or_not(any): # диспетчеризация
+    keys = {
+        'True': 'yes',
+        'False': 'no',
+    }
+    return keys[str(isinstance(any, str))]
+
+print(string_or_not('goof'))
+print(string_or_not(9))
+
+print('ALexander'.find('AL'))
+print('ALexander'.find('Ax'))
+print('ALexander'.find('and'))
+
+def normalize_url(url):
+    if url.startswith('https://'):
+        return url
+    elif url.startswith('http://'):
+        return 'https://' + url[7:]
+    else:
+        return 'https://' + url
+
+print(normalize_url('https://ya.ru'))  # 'https://ya.ru'
+print(normalize_url('google.com'))  # 'https://google.com'
+print(normalize_url('http://ai.fi'))  # 'https://ai.fi'
+
+def print_numbers(num):
+    while num:
+        print(num)
+        num -= 1
+    print('finished!')
+
+
+print_numbers(4)
