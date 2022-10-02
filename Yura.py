@@ -291,6 +291,7 @@ from main import doAction
 doAction()
 
 from symbols import is_vowel
+
 def count_vowels(string):
     count = 0
     for letter in string:
@@ -329,3 +330,7 @@ def sort_pair(pair):
     if pair[0] > pair[1]:
         return (pair[1], pair[0])
     return (pair[0], pair[1])
+
+def add(x, y):
+    """Add one argument to another."""
+    return x + y
